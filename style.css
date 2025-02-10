@@ -1,0 +1,98 @@
+.wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 40px; 
+  height: 40px; 
+  background-color: red; 
+  border-radius: 50%; 
+  transition: all 0.3s linear;
+} 
+
+input {
+  width: 300px; 
+  height: 50px; 
+  font-size: 20px;
+}
+
+.cat {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: rgb(182, 216, 216);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cat > div {
+  position: absolute;
+}
+
+.cat > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.body {
+  width: 180px;
+  height: 218px;
+  bottom: -6px;
+  left: 57px;
+}
+
+.left-eye {
+  width: 13px;
+  height: 14px;
+  bottom: 121px;
+  left: 105px;
+}
+
+.right-eye {
+  width: 13px;
+  height: 14px;
+  bottom: 121px;
+  left: 162px;
+}
+
+.ear {
+  width: 60px;
+  height: 61px;
+  bottom: 149px;
+  left: 160px;
+}
+
+.ear.shake {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 10;
+}
+
+.left-paw {
+  width: 145px;
+  height: 163px;
+  left: 13px;
+  bottom: 3px;
+  transform: translateY(100%) translateX(-50px) rotate(-45deg);
+  transition: transform 0.3s ease-in;
+}
+
+.right-paw {
+  width: 145px;
+  height: 163px;
+  left: 151px;
+  bottom: -4px;
+  transform: translateY(100%) translateX(50px) rotate(45deg);
+  transition: transform 0.3s ease-in;
+}
+
+body:has(input[type="password"]:focus) .left-paw,
+body:has(input[type="password"]:focus) .right-paw {
+  transform: translateY(0) rotate(0);
+}
